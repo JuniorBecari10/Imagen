@@ -28,8 +28,8 @@ def main(src):
                 
                 code += get_instruction(r, g, b, a)
         
-        print(code)
-        #interpret(code)
+        #print(code)
+        interpret(code)
     except Exception as e:
         print("An error occurred. Please specify a valid image file.")
         e.__traceback__.print_exception()
@@ -99,7 +99,7 @@ def interpret(code):
                 cells[ptr] = max_value
         
         elif c == '.':
-            print(cells[ptr], end="")
+            print(chr(cells[ptr]), end="")
         
         elif c == ',':
             #cells[ptr] = int(input("Requested Input: "))
