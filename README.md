@@ -9,22 +9,22 @@ Imagen is based on Brainfuck syntax, so the commands in Imagen are actually Brai
 
 ## Commands
 
-`
-0 0 0        | + <br>
-255 0 0      | - <br>
-0 255 0      | > <br>
-0 0 255      | < <br>
-255 255 0    | . <br>
-0 255 255    | , <br>
-255 0 255    | [ <br>
-255 255 255  | ] <br>
-`
+
+`0 0 0        | +` <br>
+`255 0 0      | -` <br>
+`0 255 0      | >` <br>
+`0 0 255      | <` <br>
+`255 255 0    | .` <br>
+`0 255 255    | ,` <br>
+`255 0 255    | [` <br>
+`255 255 255  | ]` <br>
+
 
 ## How to use
 
 If you use the source file with `python` command, use:
 
-`python imagen.py source.png`
+`python imagen.py source.png` <br>
 (The file name doesn't have to be source.png)<br>
 
 If you use the executable, use:
