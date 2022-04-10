@@ -32,7 +32,7 @@ def main(src):
         interpret(code)
     except Exception as e:
         print("An error occurred. Please specify a valid image file.")
-        e.__traceback__.print_exception()
+        #e.__traceback__.print_exception()
 
 def get_instruction(r, g, b, a):
     if a == 0:
@@ -132,4 +132,8 @@ def interpret(code):
         read = read + 1
 
 if __name__ == "__main__":
+    if (len(sys.argv) != 2):
+        print("Usage: python imagen.py/imagen.exe source.png")
+        exit()
+    
     main(sys.argv[1])
