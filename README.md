@@ -10,14 +10,14 @@ Imagen is based on Brainfuck syntax, so the commands in Imagen are actually Brai
 ## Commands
 
 `
-0 0 0        | +<br>
-255 0 0      | -<br>
-0 255 0      | ><br>
-0 0 255      | <<br>
-255 255 0    | .<br>
-0 255 255    | ,<br>
-255 0 255    | [<br>
-255 255 255  | ]<br>
+0 0 0        | + <br>
+255 0 0      | - <br>
+0 255 0      | > <br>
+0 0 255      | < <br>
+255 255 0    | . <br>
+0 255 255    | , <br>
+255 0 255    | [ <br>
+255 255 255  | ] <br>
 `
 
 ## How to use
