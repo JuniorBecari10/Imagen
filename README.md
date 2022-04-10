@@ -1,4 +1,4 @@
-# Imagen - A Image Programming Language
+# Imagen - An Image Programming Language
 
 What if you can use an image file to code?<br>
 With Imagen you can do this!
