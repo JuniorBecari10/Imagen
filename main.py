@@ -1,26 +1,61 @@
 import sys
 from PIL import Image
 
+# Codes
+
+# 0 0 0        | +
+# 255 0 0      | -
+# 0 255 0      | >
+# 0 0 255      | <
+# 255 255 0    | .
+# 0 255 255    | ,
+# 255 0 255    | [
+# 255 255 255  | ]
+
 stdin = ""
 
 def main(src):
     try:
         filesrc = Image.open(src)
+        code = ""
         
         w, h = filesrc.size
         pixel_map = filesrc.load()
         
         for x in range(w):
             for y in range(h):
-                r, g, b, p = filesrc.getpixel((x, y))
+                r, g, b, a = filesrc.getpixel((x, y))
                 
-                print(r, g, b)
+                code += get_instruction(r, g, b, a)
+        
+        print(code)
+        #interpret(code)
     except Exception as e:
         print("An error occurred. Please specify a valid image file.")
-        e.__trace_back__.print_exception()
+        e.__traceback__.print_exception()
 
-def get_inst(r, g, b):
-    pass
+def get_instruction(r, g, b, a):
+    if a == 0:
+        return ""
+    
+    if r == 0 and g == 0 and b == 0:
+        return "+"
+    if r == 255 and g == 0 and b == 0:
+        return "-"
+    if r == 0 and g == 255 and b == 0:
+        return ">"
+    if r == 0 and g == 0 and b == 255:
+        return "<"
+    if r == 255 and g == 255 and b == 0:
+        return "."
+    if r == 0 and g == 255 and b == 255:
+        return ","
+    if r == 255 and g == 0 and b == 255:
+        return "["
+    if r == 255 and g == 255 and b == 255:
+        return "]"
+    
+    return ""
 
 def interpret(code):
     cells = [0] * 1000
@@ -64,10 +99,7 @@ def interpret(code):
                 cells[ptr] = max_value
         
         elif c == '.':
-            if (print_char):
-                print(chr(cells[ptr]), end="")
-            else:
-                print(cells[ptr], end="") # não coloca mais espaço
+            print(cells[ptr], end="")
         
         elif c == ',':
             #cells[ptr] = int(input("Requested Input: "))
