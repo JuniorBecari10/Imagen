@@ -22,8 +22,8 @@ def main(src):
         w, h = filesrc.size
         pixel_map = filesrc.load()
         
-        for x in range(w):
-            for y in range(h):
+        for y in range(h):
+            for x in range(w):
                 r, g, b, a = filesrc.getpixel((x, y))
                 
                 code += get_instruction(r, g, b, a)
@@ -99,7 +99,7 @@ def interpret(code):
                 cells[ptr] = max_value
         
         elif c == '.':
-            print(chr(cells[ptr]), end="")
+            print((cells[ptr]), end="")
         
         elif c == ',':
             #cells[ptr] = int(input("Requested Input: "))

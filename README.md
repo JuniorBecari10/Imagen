@@ -9,6 +9,7 @@ Imagen is based on Brainfuck syntax, so the commands in Imagen are actually Brai
 
 ## Commands
 
+**r g b | command**
 
 `0 0 0        | +` <br>
 `255 0 0      | -` <br>
